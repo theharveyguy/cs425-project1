@@ -1,20 +1,15 @@
 package db_project1;
 /*
  * CS 425 Project 1
- * This class creates the Database object and the db_pool for use by servlets.
+ * This class creates the Database object.
  */
-import java.sql.ResultSetMetaData;
+
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
-
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
 
 class Database{
     Context envContext = null, initContext = null;
@@ -41,4 +36,4 @@ class Database{
     } // End closeConnection()
     
     public Connection getConnection() { return conn; }
-} // Database pool class, repurposed from Lab3B - MH
+} // Database pool class, repurposed from Lab3B

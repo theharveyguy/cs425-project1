@@ -32,24 +32,24 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Registration extends HttpServlet {
 
-    //acquire db access
-    Database db = null;
-    
-    Connection connection;
-    PreparedStatement pstatement = null;
-    ResultSet resultset = null;
-        
-    String query;
-    String parameter;
-
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        response.setContentType("text/html;charset=utf-8");
+        String sessionID = request.getParameter("sessionID");
+        ManipulateData.getDataAsTable(sessionID);
 
     }// GET requests
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        response.setContentType("application/json;charset=utf-8");
+        
+        String registrationCode = ""; // build registrationCode onto this
 
     }// POST requests
-
+    
+    @Override
+    public String getServletInfo() { return "Registration Application";}
 }
