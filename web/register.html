@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register Attendee</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <a href="http://index.html">Search Registrations</a>
+        <a href="http://register.html">Register User</a>
+        <div id="registerForm">
+            <form method="post">
+                First Name: <input type="text" name="firstName"/><br/>
+                Last Name: <input type="text" name="lastName"/><br/>
+                How your name will be displayed: <input type="text" name="givenName"/><br/>
+                Session: <select name="Sessions" size="4">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                         </select>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div id="version"></div>
+        <script type="text/javascript">
+            autofill.init();
+        </script>
+    </body>
+</html>

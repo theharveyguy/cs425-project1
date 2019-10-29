@@ -12,13 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /*
  * Gameplan:
- * 1. Acquire database access from db_pool
- *
- * 2. GET requests
- *  2.1 Accept sessionID as argument
- *  2.2 Query db for all attendees at the session matching the ID
- *  2.3 Return list of attendees as HTML table
- *
+ 
  * 3. POST requests
  *  3.1 Accept firstName, lastName, givenName, and sessionID as arguments
  *  3.2 Add new record to registrations db for the new attendee
@@ -37,7 +31,7 @@ public class Registration extends HttpServlet {
             throws ServletException, IOException{
         response.setContentType("text/html;charset=utf-8");
         String sessionID = request.getParameter("sessionID");
-        ManipulateData.getDataAsTable(sessionID);
+        Database.getDataAsTable(sessionID);
 
     }// GET requests
 
