@@ -4,15 +4,21 @@
         <title>Register Attendee</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script type="text/javascript" src="scripts/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="scripts/autofill.js"></script>
     </head>
     <body>
-        <a href="http://index.html">Search Registrations</a>
-        <a href="http://register.html">Register User</a>
+        <a href="index.html">Search Registrations</a>
+        <a href="register.html">Register User</a>
         <div id="registerForm">
             <form method="post">
-                First Name: <input type="text" name="firstName"/><br/>
-                Last Name: <input type="text" name="lastName"/><br/>
-                How your name will be displayed: <input type="text" name="givenName"/><br/>
+                <script type="text/javascript">
+                    autofill.autoFill();
+                </script>
+                First Name: <input type="text" name="firstName" id="fName"/><br/>
+                Last Name: <input type="text" name="lastName" id="lName"/><br/>
+                How your name will be displayed: <input type="text" name="givenName" id="givenName"/><br/>
                 Session: <select name="Sessions" size="4">
                             <option>1</option>
                             <option>2</option>

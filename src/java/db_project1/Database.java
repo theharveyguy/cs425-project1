@@ -107,7 +107,7 @@ class Database{
         catch (Exception e) { System.err.println( e.toString() ); }
         return (table);
     }
-    public static String postDataAsJSON(){
+    //public static String postDataAsJSON(){
         // used by post?
-    }
+    //}
 } // Database pool class, repurposed from Lab3B
