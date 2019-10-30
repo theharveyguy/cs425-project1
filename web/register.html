@@ -5,19 +5,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <script type="text/javascript" src="scripts/jquery-3.4.1.min.js"></script>
-        <script type="text/javascript" src="scripts/autofill.js"></script>
+        <script type="text/javascript" src="Scripts/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="Scripts/autofill.js"></script>
     </head>
     <body>
         <a href="index.html">Search Registrations</a>
         <a href="register.html">Register User</a>
         <div id="registerForm">
             <form method="post">
-                <script type="text/javascript">
-                    autofill.autoFill();
-                </script>
-                First Name: <input type="text" name="firstName" id="fName"/><br/>
-                Last Name: <input type="text" name="lastName" id="lName"/><br/>
+                First Name: <input type="text" name="firstName" id="fName" onchange="autofill.autoFill()"/><br/>
+                Last Name: <input type="text" name="lastName" id="lName" onchange="autofill.autoFill()"/><br/>
                 How your name will be displayed: <input type="text" name="givenName" id="givenName"/><br/>
                 Session: <select name="Sessions" size="4">
                             <option>1</option>
