@@ -107,7 +107,37 @@ class Database{
         catch (Exception e) { System.err.println( e.toString() ); }
         return (table);
     }
-    //public static String postDataAsJSON(){
-        // used by post?
-    //}
+    public static String postDataAsJSON(String firstName, String lastName, String givenName, String sessionID){
+        
+        //db pool variables
+        Database db = null;
+        Connection connection;
+        //SQL variables
+        String query;
+        PreparedStatement pstatement = null;
+        ResultSet resultset = null;
+        boolean hasResult;
+
+        String registrationCode = "R0000"; // build registrationCode onto this
+        try{
+            db = new Database();
+            connection = db.getConnection();
+            
+            query = "INSERT INTO 'registrations' (firstname, lastname, displayname, sessionid) VALUES ("+firstName+","+lastName+","+givenName+","+sessionID+");";
+            pstatement = connection.prepareStatement(query);
+            hasResult = pstatement.execute();
+            
+            query = "SELECT id FROM registrations WHERE firstname = "+firstName+" and lastname = "+lastName+";";
+            pstatement = connection.prepareStatement(query);
+            hasResult = pstatement.execute();
+            
+            if (hasResult){
+                resultset = pstatement.getResultSet();
+                registrationCode += resultset.toString();
+            }
+        }
+        
+        catch (Exception e) { System.err.println( e.toString() ); }
+        return registrationCode;
+    }
 } // Database pool class, repurposed from Lab3B
